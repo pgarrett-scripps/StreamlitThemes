@@ -1,6 +1,8 @@
 
 import streamlit as st
-from stthemes.component import custom_theme_widget
+
+from streamlit_themes.component import generate_theme_config_string
+from streamlit_themes.widgets import custom_theme_widget
 
 st.title("Hello World")
 
@@ -27,4 +29,9 @@ c1.button("Button", use_container_width=True)
 c2.button("Button", type="primary", use_container_width=True)
 
 with st.sidebar:
+    st.header("Custom Theme")
     custom_theme_widget()
+
+    st.header("Theme Configuration", divider="grey")
+    st.caption("Copy this and add it to your apps .streamlit/config.toml file.")
+    st.code(generate_theme_config_string())
