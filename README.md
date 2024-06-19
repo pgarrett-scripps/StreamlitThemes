@@ -16,6 +16,9 @@ pip install streamlit-themes
 
 ## Basic Usage
 
+![](https://github.com/pgarrett-scripps/StreamlitThemes/demo.gif)
+
+
 Here's a basic example of how to use the `streamlit-themes` package:
 
 ```python
