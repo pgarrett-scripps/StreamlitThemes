@@ -14,10 +14,11 @@ To install the `streamlit-themes` package, simply use pip:
 pip install streamlit-themes
 ```
 
+## Demo
+
+![Alt Text](demo.gif)
+
 ## Basic Usage
-
-![](https://github.com/pgarrett-scripps/StreamlitThemes/demo.gif)
-
 
 Here's a basic example of how to use the `streamlit-themes` package:
 
