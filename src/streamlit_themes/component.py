@@ -159,7 +159,7 @@ def set_theme(background_color: Optional[str],
         st.rerun()
 
 
-def _get_theme_option(option: str) -> str:
+def _get_theme_option(option: str) -> Optional[str]:
     """
     Gets the value of a theme option.
 
@@ -174,13 +174,10 @@ def _get_theme_option(option: str) -> str:
     """
     value = st._config.get_option(option)
 
-    if value is None:
-        raise ValueError(f"{option} not set. Likely a custom theme has not been set in .streamlit/config.toml")
-
     return value
 
 
-def get_theme_background_color() -> str:
+def get_theme_background_color() -> Optional[str]:
     """
     Gets the background color of the theme.
 
@@ -190,7 +187,7 @@ def get_theme_background_color() -> str:
     return _get_theme_option("theme.backgroundColor")
 
 
-def get_theme_primary_color() -> str:
+def get_theme_primary_color() -> Optional[str]:
     """
     Gets the primary color of the theme.
 
@@ -200,7 +197,7 @@ def get_theme_primary_color() -> str:
     return _get_theme_option("theme.primaryColor")
 
 
-def get_theme_secondary_background_color() -> str:
+def get_theme_secondary_background_color() -> Optional[str]:
     """
     Gets the secondary background color of the theme.
 
@@ -210,7 +207,7 @@ def get_theme_secondary_background_color() -> str:
     return _get_theme_option("theme.secondaryBackgroundColor")
 
 
-def get_theme_text_color() -> str:
+def get_theme_text_color() -> Optional[str]:
     """
     Gets the text color of the theme.
 
@@ -220,7 +217,7 @@ def get_theme_text_color() -> str:
     return _get_theme_option("theme.textColor")
 
 
-def get_theme_font() -> str:
+def get_theme_font() -> Optional[str]:
     """
     Gets the font of the theme.
 

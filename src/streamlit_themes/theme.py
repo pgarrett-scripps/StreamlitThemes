@@ -1,14 +1,14 @@
 import dataclasses
-from typing import Dict
+from typing import Dict, Optional
 
 
 @dataclasses.dataclass
 class Theme:
-    background_color: str
-    primary_color: str
-    secondary_background_color: str
-    text_color: str
-    font: str
+    background_color: Optional[str]
+    primary_color: Optional[str]
+    secondary_background_color: Optional[str]
+    text_color: Optional[str]
+    font: Optional[str]
 
     @classmethod
     def from_python_dict(cls, theme_dict: Dict[str, str]):

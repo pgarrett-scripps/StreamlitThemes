@@ -2,7 +2,7 @@ from typing import Dict
 import streamlit as st
 
 from streamlit_themes.component import get_theme_background_color, get_theme_secondary_background_color, \
-    get_theme_primary_color, get_theme_text_color, get_theme_font, _set_theme_dict, get_preset_theme, get_all_preset_themes
+    get_theme_primary_color, get_theme_text_color, get_theme_font, _set_theme_dict, get_preset_theme
 from streamlit_themes.constants import THEMES, VALID_FONTS
 from streamlit_themes.theme import Theme
 
@@ -23,7 +23,10 @@ def _custom_theme_widget() -> Theme:
     st.subheader("Text Options", divider='grey')
     c1, c2 = st.columns([1, 3])
     text_color = c1.color_picker("Color", get_theme_text_color())
-    font = c2.selectbox("Font", VALID_FONTS, index=VALID_FONTS.index(get_theme_font()))
+    current_font = get_theme_font()
+    if current_font is None:
+        current_font = VALID_FONTS[0]
+    font = c2.selectbox("Font", VALID_FONTS, index=VALID_FONTS.index(current_font))
 
     return Theme(
         background_color=background_color,
